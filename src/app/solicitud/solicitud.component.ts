@@ -7,18 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SolicitudComponent implements OnInit {
 
-  solicitud = {nombre: "Javier", apellidos: "Gamarra"};
+  solicitud = {nombre: "", apellidos: ""};
   invalido: boolean = true;
 
-  constructor() {
-    setInterval(() => {
-      var value = Math.random();
-      this.solicitud.nombre = String(value);
-      this.invalido = value > 0.5;
-    }, 1000)
-  }
 
   ngOnInit(): void {
+  }
+
+  actualizarNombre($event: KeyboardEvent) {
+    const nombre = $event.target as HTMLInputElement;
+    this.solicitud.nombre = nombre.value;
+  }
+
+  actualizarApellidos($event: KeyboardEvent) {
+    const apellidos = $event.target as HTMLInputElement;
+    this.solicitud.apellidos = apellidos.value;
   }
 
   enviar(saludo: string) {

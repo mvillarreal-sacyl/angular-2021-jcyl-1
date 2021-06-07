@@ -3,10 +3,10 @@
 <h2>Nueva solicitud</h2>
 
 <label>Nombre:</label>
-<input [value]="solicitud.nombre">
+<input [value]="solicitud.nombre" (keyup)="actualizarNombre($event)">
 
 <label>Apellidos:</label>
-<input [value]="solicitud.apellidos">
+<input [value]="solicitud.apellidos" (keyup)="actualizarApellidos($event)">
 
 
 
