@@ -8,12 +8,9 @@
 <label>Apellidos:</label>
 <input [value]="solicitud.apellidos" (keyup)="actualizarApellidos($event)">
 
-
-
-
 <div>
-    <button class=" button is-primary " (click)="enviar( 'Manuel') ">Enviar</button>
+    <button (click)="enviar()" [disabled]="getDisabled()">Enviar</button>
 </div>
 <div>
-    <button class="button is-primary " (click)="delete() ">Borrar consola</button>
+    <button (click)="eliminar()">Borrar</button>
 </div>

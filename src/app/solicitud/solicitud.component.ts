@@ -7,9 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SolicitudComponent implements OnInit {
 
-  solicitud = {nombre: "", apellidos: ""};
-  invalido: boolean = true;
-
+  solicitud = {nombre: "Javier", apellidos: "Gamarra"};
 
   ngOnInit(): void {
   }
@@ -24,13 +22,17 @@ export class SolicitudComponent implements OnInit {
     this.solicitud.apellidos = apellidos.value;
   }
 
-  enviar(saludo: string) {
-    console.log("Hola " + saludo + "!");
-    console.log(this.solicitud.nombre);
+  enviar() {
+    console.log(this.solicitud);
   }
 
-  delete() {
-    console.clear();
-    console.log('eliminar!');
-    }
+  eliminar() {
+    this.solicitud.nombre = "";
+    this.solicitud.apellidos = "";
+  }
+
+  getDisabled() {
+    return this.solicitud.nombre.length < 3 || this.solicitud.apellidos.length < 5
+  }
+
 }
