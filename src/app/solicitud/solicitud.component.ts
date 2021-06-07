@@ -8,6 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class SolicitudComponent implements OnInit {
 
   solicitud = {nombre: "Javier", apellidos: "Gamarra"};
+  solicitudes = [
+    {id:0, nombre: "Javier", apellidos: "Gamarra"},
+    {id:1, nombre: "Manuel", apellidos: "Villarreal"},
+    {id:2, nombre: "Toni", apellidos: "Braxton"},
+    {id:3, nombre: "Phil", apellidos: "Collins"},
+    {id:4, nombre: "Sade", apellidos: "Adu"},
+    {id:5, nombre: "Steven", apellidos: "Tyler"}];
 
   ngOnInit(): void {
   }
@@ -26,11 +33,11 @@ export class SolicitudComponent implements OnInit {
     console.log(this.solicitud);
   }
 
-  eliminar() {
-    this.solicitud.nombre = "";
-    this.solicitud.apellidos = "";
-  }
 
+  eliminar(solicitud : any) {
+    this.solicitudes = this.solicitudes.filter(x => x.id != solicitud.id)
+
+  }
   getDisabled() {
     return this.solicitud.nombre.length < 3 || this.solicitud.apellidos.length < 5
   }

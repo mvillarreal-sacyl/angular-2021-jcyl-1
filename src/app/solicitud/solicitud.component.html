@@ -15,6 +15,10 @@
 <div>
     <button (click)=" enviar() " [disabled]="getDisabled() ">Enviar</button>
 </div>
-<div>
-    <button (click)="eliminar() ">Borrar</button>
+
+
+<h2>Listado de solicitudes</h2>
+
+<div *ngFor="let solicitud of solicitudes">
+    {{solicitud.nombre}} {{solicitud.apellidos}} <button (click)="eliminar(solicitud)">Eliminar</button>
 </div>
