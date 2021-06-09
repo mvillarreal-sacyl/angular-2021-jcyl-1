@@ -7,6 +7,7 @@ import { SolicitudesComponent } from './solicitudes/solicitudes.component';
 import { CentroComponent } from './centro/centro.component';
 import { CentrosComponent } from './centros/centros.component';
 import { SelectorCentroComponent } from './selector-centro/selector-centro.component';
+import { FilaSolicitudComponent } from './fila-solicitud/fila-solicitud.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SelectorCentroComponent } from './selector-centro/selector-centro.compo
     SolicitudesComponent,
     CentroComponent,
     CentrosComponent,
-    SelectorCentroComponent
+    SelectorCentroComponent,
+    FilaSolicitudComponent
   ],
   imports: [
     BrowserModule,

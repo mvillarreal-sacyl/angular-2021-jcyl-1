@@ -34,7 +34,8 @@ export class SolicitudesComponent implements OnInit {
   }
 
 
-  eliminar(solicitud : any) {
+  borrar(solicitud: any) {
+    console.log("Solicitud a borrar: " + solicitud.nombre + " " + solicitud.apellidos);
     this.solicitudes = this.solicitudes.filter(x => x.id != solicitud.id)
 
   }
