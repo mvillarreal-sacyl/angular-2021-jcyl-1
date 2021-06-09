@@ -21,12 +21,12 @@ import { Centro } from '../centros/centros.component';
 export class SelectorCentroComponent implements OnInit {
 
   fechaActual = new Date();
-  centros: Centro[] = [{nombre: "Ponce de León"}, {nombre: "San Agustín"}];
+  centros: Centro[] = [{ nombre: "Ponce de León" }, { nombre: "San Agustín" }];
   centrosFiltrados: Centro[] = [];
 
 
   @Output()
-  centroSeleccionado: Centro = {nombre: ''};
+  centroSeleccionado: Centro = { nombre: '' };
 
   constructor() { }
 
