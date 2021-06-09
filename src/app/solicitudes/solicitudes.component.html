@@ -9,8 +9,12 @@
 <input [value]="solicitud.apellidos" (keyup)="actualizarApellidos($event)">
 
 <div *ngIf="getDisabled()">
-    La longitud del nombre o de los apellidos no es válida<br> El nombre debe contener al menos 3 caracteres y los apellidos 5
+    La longitud del nombre o de los apellidos no es válida
 </div>
+
+<h2>Centro</h2>
+<app-selector-centro></app-selector-centro>
+
 
 <div>
     <button (click)=" enviar() " [disabled]="getDisabled() ">Enviar</button>

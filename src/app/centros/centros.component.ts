@@ -12,9 +12,8 @@ import { Component, OnInit } from '@angular/core';
 export class CentrosComponent implements OnInit {
 
   centros : Centro[] = [
-    {nombre: "Hospital Medina del Campo"},
-    {nombre: "Hospital Clínico Universitario Valladolid"},
-    {nombre: "Hospital Río Hortega"},
+    {nombre: "Ponce de León"},
+    {nombre: "San Agustín"},
   ]
   constructor() { }
 
