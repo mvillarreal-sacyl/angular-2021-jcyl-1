@@ -24,7 +24,7 @@
 <h2>Listado de solicitudes</h2>
 
 <div *ngFor="let solicitud of solicitudes">
-    <app-fila-solicitud [solicitud]="solicitud" (solicitudEliminada)="borrar(solicitud)">
+    <app-fila-solicitud [solicitud]="solicitud" (solicitudEliminada)="eliminar(solicitud)">
 
     </app-fila-solicitud>
 </div>

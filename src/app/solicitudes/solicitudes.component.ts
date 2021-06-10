@@ -9,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class SolicitudesComponent implements OnInit {
 
   solicitud = {nombre: "Javier", apellidos: "Gamarra"};
-  solicitudes;
-
+  solicitudes: any;
     constructor(private solicitudService: SolicitudService) {
-      this.solicitudes = solicitudService.getSolicitudes();
+      solicitudService.getSolicitudes().then(
+        (data: any) => this.solicitudes = data.items.map((x: any) => x.fields)
+      )
     }
 
   ngOnInit(): void {
@@ -33,9 +34,8 @@ export class SolicitudesComponent implements OnInit {
   }
 
 
-  borrar(solicitud: any) {
-    console.log("Solicitud a borrar: " + solicitud.nombre + " " + solicitud.apellidos);
-    this.solicitudes = this.solicitudes.filter(x => x.id != solicitud.id)
+  eliminar(solicitud: any) {
+    // this.solicitudes = this.solicitudes.filter(x => x.id != solicitud.id)
 
   }
   getDisabled() {
