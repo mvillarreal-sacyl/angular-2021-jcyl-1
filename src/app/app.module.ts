@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,7 +11,10 @@ import { SelectorCentroComponent } from './selector-centro/selector-centro.compo
 import { FilaSolicitudComponent } from './fila-solicitud/fila-solicitud.component';
 import { HttpClientModule } from '@angular/common/http';
 
-
+let routes = [
+  {path:'', component: SolicitudesComponent},
+  {path:'centros', component: CentrosComponent}
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
