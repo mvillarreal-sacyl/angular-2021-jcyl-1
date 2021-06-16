@@ -1,4 +1,8 @@
 <a routerLink="">Solicitudes&emsp;</a>
+<a [routerLink]="['centro', 1]">Centro 1&emsp;</a>
+
+<a (click)="navegarAlCentro()">Navegar al centro&emsp;</a>
+
 <a routerLink="centros">Listado de centros</a>
 
 <router-outlet></router-outlet>

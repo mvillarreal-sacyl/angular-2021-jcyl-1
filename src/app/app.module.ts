@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 let routes = [
   {path:'', component: SolicitudesComponent},
+  {path:'centro/:centroId', component: CentroComponent},
   {path:'centros', component: CentrosComponent}
 ]
 @NgModule({
