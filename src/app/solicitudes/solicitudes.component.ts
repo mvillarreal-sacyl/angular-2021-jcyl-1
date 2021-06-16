@@ -8,13 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SolicitudesComponent implements OnInit {
 
-  solicitud = {nombre: "Javier", apellidos: "Gamarra"};
-  solicitudes: any;
-    constructor(private solicitudService: SolicitudService) {
-      solicitudService.getSolicitudes().then(
-        (data: any) => this.solicitudes = data.items.map((x: any) => x.fields)
-      )
-    }
+  solicitud = { nombre: "Javier", apellidos: "Gamarra" };
+  solicitudes$: any;
+
+  constructor(private solicitudService: SolicitudService) {
+    this.solicitudes$ = solicitudService.getSolicitudes();
+  }
 
   ngOnInit(): void {
   }
