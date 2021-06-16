@@ -5,7 +5,8 @@ import { Centro } from '../centros/centros.component';
 @Component({
   selector: 'app-centro',
   template: `
-    {{centro?.nombre}}
+    <p>{{centro?.nombre}}</p>
+    <app-solicitudes></app-solicitudes>
   `,
   styleUrls: ['./centro.component.css']
 })
