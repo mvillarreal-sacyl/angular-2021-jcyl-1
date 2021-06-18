@@ -9,7 +9,7 @@ import { CentrosComponent } from './centros/centros.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SolicitudesComponent } from './solicitudes/solicitudes.component';
 import { DatosBancariosComponent } from './datos-bancarios/datos-bancarios.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 let routes = [
   {path:'', component: SolicitudesComponent},
@@ -31,6 +31,7 @@ let routes = [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes)
 
   ],
