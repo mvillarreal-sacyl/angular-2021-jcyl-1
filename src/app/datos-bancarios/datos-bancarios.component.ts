@@ -1,5 +1,5 @@
 import { Component, OnInit, NgModule } from '@angular/core';
-import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-datos-bancarios',
@@ -32,7 +32,7 @@ export class DatosBancariosComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder) {
     this.formGroup = formBuilder.group(
-      {entidad: '', sucursal: '0000', dc: '', cuenta:''}
+      {entidad: new FormControl(""), sucursal: '0000', dc: '', cuenta:''}
     )
   }
 
