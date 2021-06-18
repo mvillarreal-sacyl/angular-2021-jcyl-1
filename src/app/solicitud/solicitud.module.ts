@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SolicitudesComponent } from '../solicitudes/solicitudes.component';
 import { SelectorCentroComponent } from '../selector-centro/selector-centro.component';
 import { FilaSolicitudComponent } from '../fila-solicitud/fila-solicitud.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -16,7 +17,8 @@ import { FilaSolicitudComponent } from '../fila-solicitud/fila-solicitud.compone
     SolicitudesComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class SolicitudModule { }

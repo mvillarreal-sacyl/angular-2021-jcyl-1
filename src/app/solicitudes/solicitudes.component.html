@@ -3,22 +3,24 @@
 <h2>Nueva solicitud</h2>
 
 <label>Nombre:</label>
-<input [value]="solicitud.nombre" (keyup)="actualizarNombre($event)">
+<input [(ngModel)]="solicitud.nombre">
 
 <label>Apellidos:</label>
-<input [value]="solicitud.apellidos" (keyup)="actualizarApellidos($event)">
+<input [(ngModel)]="solicitud.apellidos">
 
 <div *ngIf="getDisabled()">
     La longitud del nombre o de los apellidos no es válida
 </div>
 
+<div>
+    <button (click)=" enviar() " [disabled]="getDisabled() ">Enviar</button>
+</div>
+
+
 <h2>Centro</h2>
 <app-selector-centro></app-selector-centro>
 
 
-<div>
-    <button (click)=" enviar() " [disabled]="getDisabled() ">Enviar</button>
-</div>
 
 
 <h2>Listado de solicitudes</h2>
