@@ -34,16 +34,20 @@ import { FormBuilder, FormControl, FormControlName, FormGroup, NgForm, Validator
 export class DatosBancariosComponent implements OnInit {
 
   formGroup: FormGroup;
+  sucursalGroup = new FormControl('0000', [Validators.required, this.myValidadorSucursal]);
+  cuentaGroup = new FormControl('0000000000', [Validators.required, this.myValidadorCuenta]);
 
   constructor(private formBuilder: FormBuilder) {
     this.formGroup = formBuilder.group(
       {
         entidad: new FormControl(""),
-        sucursal: new FormControl('0000', [Validators.required, this.myValidadorSucursal]),
+        sucursal: this.sucursalGroup,
         dc: '',
-        cuenta: new FormControl('0000', [Validators.required, this.myValidadorCuenta])
+        cuenta: this.cuentaGroup
       }
-    )
+    );
+    this.sucursalGroup.valueChanges.subscribe(x => console.log('Sucursal: ' + x));
+    this.cuentaGroup.valueChanges.subscribe(x => console.log('Num Cuenta: ' + x));
   }
 
   ngOnInit(): void {
